@@ -1,0 +1,50 @@
+import random
+ab=random.randint(50,100)
+n=ab
+def game():
+    i = 1
+    while (i<=5):
+        # i = i + 1
+
+        print(6 - i, "Number Of guesses You Have")
+        try:
+            a=int(input())
+
+            if a < n:
+                i = i + 1
+                print("You Enter Too Low")
+                continue
+            elif a >n:
+                i = i + 1
+                print("You Enter Too High")
+                continue
+            elif a==n:
+                i = i + 1
+                print("Winner")
+                i = i - 1
+                print("Your guess Number Is", i)
+                break
+        except Exception as k:
+            print("Inpute Only Number")
+
+    if (i> 5):
+        print("Game Over")
+        print(f"Number was {ab}")
+    print("You Want To Play Again? Y/N")
+    def yorno():
+        while(True):
+
+            try:
+                User_inpute = input().lower()
+                if User_inpute=='y':
+                    game()
+                elif User_inpute=='n':
+                    print("Okay...Play Next Time")
+                else:
+                    print("Inpute a Valide Key")
+                    yorno()
+            except Exception as k:
+                print("Inpute Only y/n")
+            break
+    yorno()
+game()
