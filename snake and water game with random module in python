@@ -1,0 +1,96 @@
+import random
+print("Type your name")
+user_name = input()
+def game():
+    """
+    Main Program
+    """
+
+    tr = 0
+    Your_score = 0
+    Com_score = 0
+    while (tr < 10):
+
+
+        
+        """
+        1=watter
+        2=gun
+        3=snake
+        """
+        a=random.randint(1,3)
+        print("Gun=g, Watter=w, Snake=s")
+        user_inpute = input()
+        if user_inpute.lower() == 'w' and a == 1:
+            tr = (tr + 1)
+            print("Draw")
+            print("Computer put Watter")
+        elif user_inpute.lower() == 'g' and a == 2:
+            tr = (tr + 1)
+            print("Draw")
+            print("Computer put Gun")
+        elif user_inpute.lower() == 's' and a == 3:
+            tr = (tr + 1)
+            print("Draw")
+            print("Computer put Snake")
+        elif user_inpute.lower() == 's' and a == 1:
+            tr = (tr + 1)
+            Your_score = (Your_score + 1)
+            print(f"{user_name} is wine")
+            print("Computer put watter")
+        elif user_inpute.lower() == 'w' and a == 2:
+            tr = (tr + 1)
+            Your_score = (Your_score + 1)
+            print(f"{user_name} is wine")
+            print("Computer put Gun")
+        elif user_inpute == 'g' and a == 3:
+            tr = (tr + 1)
+            Your_score = (Your_score + 1)
+            print(f"{user_name} is win")
+            print("Computer put Snake")
+            #computer
+        elif user_inpute.lower() == 'w' and a == 3:
+            tr = (tr + 1)
+            Com_score = (Com_score + 1)
+            print("computer is wine")
+            print("Computer put snake")
+
+        elif user_inpute.lower() == 'g' and a == 1:
+            tr = (tr + 1)
+            Com_score = (Com_score + 1)
+            print("Computer is wine")
+            print("Computer put Watter")
+        elif user_inpute == 's' and a == 2:
+            tr = (tr + 1)
+            Com_score = (Com_score + 1)
+            print("computer is win")
+            print("Computer put Snake")
+        else:
+            print("Inpute a valide name")
+        print(f"You complite {tr} chance")
+        print(f"{user_name} score is {Your_score}")
+        print(f"Computer score is {Com_score}")
+        continue
+    if Your_score==Com_score:
+        print("Mathc is Draw")
+    elif Your_score>Com_score:
+        print(f"{user_name} Wine and Your Score is {Your_score}. \n Computer loos in {Your_score-Com_score}")
+    else:
+        print(f"Computer Wine and Computer Score is {Com_score}.\n {user_name} loos in {Com_score-Your_score}")
+
+    print(f"{user_name} want to play aggen? Y/n")
+    def i1():
+        """
+        yes or no Function
+        """
+        un = input().upper()
+        if un == 'N':
+            print("Ok, Play next time....")
+        elif un == 'Y':
+            game()
+
+        else:
+            print("Input a valid key, Input only Y or N ")
+            i1()
+    i1()
+game()
