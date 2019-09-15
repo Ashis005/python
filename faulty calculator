@@ -1,0 +1,39 @@
+print("calculator")
+while (True):
+
+    first_number = int(input("Input First number \n"))
+    sine = input("Input a sine \n")
+    Sec_number = int(input("Input Secend number \n"))
+    if first_number == 45 and Sec_number == 3 and sine == '*':
+        print(555)
+        continue
+    elif first_number == 56 and Sec_number == 9 and sine == '+':
+        print(4)
+        continue
+    elif first_number == 56 and Sec_number == 6 and sine == '/':
+        print(4)
+        continue
+    elif sine == '+':
+        result = first_number + Sec_number
+        print(result)
+        continue
+    elif sine == '-':
+        result = first_number - Sec_number
+        print(result)
+        continue
+    elif sine == '*':
+        result = first_number * Sec_number
+
+        print(result)
+        continue
+    elif sine == '/':
+        result = first_number / Sec_number
+        print(result)
+        continue
+    elif sine == '%':
+        result = first_number % Sec_number
+        print(result)
+        continue
+    else:
+        print(404)
+        break
