@@ -1,0 +1,34 @@
+import os
+
+"""
+pest some .jpg file in desktop game folder and see changes....
+"""
+os.chdir('C:/Users/user/Desktop')
+try:
+    os.mkdir("game")
+except Exception as f:
+    pass
+os.chdir('C:/Users/user/Desktop/game')
+# print(os.listdir("C:/Users/user/Desktop/game"))
+try:
+    def Main():
+        
+        i = 0
+        for filename in os.listdir("C:/Users/user/Desktop/game"):
+            print(filename)
+            if filename.endswith("jpg"):
+                src = filename
+                dst=str(i)+".jpg"
+
+                os.rename(src,dst)
+                i += 1
+
+    # print(os.getcwd())
+    # print(dir(os))
+    if __name__ == '__main__':
+        Main()
+except Exception as f:
+    pass
+finally:
+    for item in os.listdir('C:/Users/user/Desktop/game'):
+        print("New List Is "+item)
